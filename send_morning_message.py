@@ -265,7 +265,27 @@ def wxPusher(tex):
     except Exception as e:
         print("send message to wx, err:", e)
         sendAlarmMsg(str(e))
-
+def wxPusher2(tex):
+    url = "http://wxpusher.zjiecode.com/api/send/message"
+    header = {"Content-Type": "application/json", "Charset": "UTF-8"}
+    message = {
+        "appToken": wxpushAppToken,
+        "content": tex,
+        "summary": "按时吃药提醒",
+        "contentType": 2,
+        "topicIds": wxpushTopicIds,
+        "url": "http://wxpusher.zjiecode.com",
+    }
+    message_json = json.dumps(message)
+    try:
+        info = requests.post(url=url, data=message_json, headers=header)
+        print(info.text)
+    except requests.exceptions.RequestException as e:
+        print("unable to connect to wx, err:", e)
+        sendAlarmMsg(str(e))
+    except Exception as e:
+        print("send message to wx, err:", e)
+        sendAlarmMsg(str(e))
 
 if __name__ == "__main__":
     h = getMsgHeader()
@@ -278,10 +298,9 @@ if __name__ == "__main__":
     
     # 新增的提醒内容
     medication_reminder = (
-        '宝宝记得按时吃药哦，再坚持<font color="warning"> {} </font>天就好拉：'
-        '早晨空腹：雷贝拉唑 * 1，枸酸秘钾 * 2；'
-        '饭后半小时：阿莫西林 * 4，克拉霉素 * 2。'
-    ).format(days_until_end)
+    '宝宝记得按时吃药哦，再坚持<font color="warning"> {} </font>天就好拉：\n'
+    '早晨空腹：雷贝拉唑 * 1，枸酸秘钾 * 2；\n'
+    '饭后半小时：阿莫西林 * 4，克拉霉素 * 2。').format(days_until_end)
 
     # 企业微信
     w1 = w.getWeatherTextToWechatWork()
@@ -332,7 +351,7 @@ if __name__ == "__main__":
         .strftime("%Y-%m-%d"),
         bd,
         w2,
-        dw2,
-        medication_reminder
+        dw2
     )
     wxPusher(tex2)
+    wxPusher2(medication_reminder)
