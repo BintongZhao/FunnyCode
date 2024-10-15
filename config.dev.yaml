@@ -1,5 +1,5 @@
 wxPusher:
-  appToken: "xxxxxxxxxxxxxxxxxxxxxx"  # wxPusher的appToken
+  appToken: "AT_penx9gyzxwP6g7dwd4lb6LoWHskuGPiE"  # wxPusher的appToken
   topicIds:
     - xxxx                          # wxPusher的topicIds，支持多个ID
 
