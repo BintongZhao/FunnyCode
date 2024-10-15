@@ -2,7 +2,7 @@ name: CI
 on:
   schedule:
   # 每天早上7:40运行
-  - cron: "0 0 * * *"
+  - cron: "6 0 * * *"
   # 每天下午5:00运行
   - cron: "0 17 * * *"
   push:
