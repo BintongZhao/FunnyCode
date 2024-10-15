@@ -71,7 +71,7 @@ class Weather:
         self.nightpower = casts["nightpower"]
 
     def getWeatherTextToWechatWork(self):
-        tex = '武汉天气\n > <font color="info">{}</font>, 白天温度: <font color="info">{}</font> ~ 晚上温度: <font color="info">{}</font>\n白天风力:{}-{}，晚上风力:{}-{}。'.format(
+        tex = '西安天气\n > <font color="info">{}</font>, 白天温度: <font color="info">{}</font> ~ 晚上温度: <font color="info">{}</font>\n白天风力:{}-{}，晚上风力:{}-{}。'.format(
             self.dayweather,
             self.daytemp,
             self.nighttemp,
@@ -83,7 +83,7 @@ class Weather:
         return tex
 
     def getWeatherTextToWechat(self):
-        tex = '<hr>武汉天气 <br> <font color="green">{}</font>, 白天温度: <font color="green">{}</font> ~ 晚上温度: <font color="green">{}</font>， 白天风力:{}-{}，晚上风力:{}-{}。'.format(
+        tex = '<hr>西安天气 <br> <font color="green">{}</font>, 白天温度: <font color="green">{}</font> ~ 晚上温度: <font color="green">{}</font>， 白天风力:{}-{}，晚上风力:{}-{}。'.format(
             self.dayweather,
             self.daytemp,
             self.nighttemp,
@@ -268,6 +268,14 @@ if __name__ == "__main__":
     md = getMeetingDay()
     ed = getExpressLoveDay()
     dw = getDailyWord()
+    days_until_end = getDaysUntil("2024-10-27")
+    
+    # 新增的提醒内容
+    medication_reminder = (
+        '记得按时吃药哦，再坚持<font color="warning"> {} </font>天就好了：'
+        '早晨空腹：雷贝拉唑 * 1，枸酸秘钾 * 2；'
+        '饭后半小时：阿莫西林 * 4，克拉霉素 * 2。'
+    ).format(days_until_end)
 
     # 企业微信
     w1 = w.getWeatherTextToWechatWork()
