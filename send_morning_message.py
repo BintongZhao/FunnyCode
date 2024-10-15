@@ -298,8 +298,8 @@ if __name__ == "__main__":
     
     # 新增的提醒内容
     medication_reminder = (
-    '宝宝记得按时吃药哦，再坚持<font color="warning"> {} </font>天就好拉：\n'
-    '早晨空腹：雷贝拉唑 * 1，枸酸秘钾 * 2；\n'
+    '宝宝记得按时吃药哦，再坚持<font color="warning"> {} </font>天就好拉：<br>'
+    '早晨空腹：雷贝拉唑 * 1，枸酸秘钾 * 2；<br>'
     '饭后半小时：阿莫西林 * 4，克拉霉素 * 2。').format(days_until_end)
 
     # 企业微信
