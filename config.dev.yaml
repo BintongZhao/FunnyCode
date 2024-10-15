@@ -1,7 +1,7 @@
 wxPusher:
   appToken: "AT_penx9gyzxwP6g7dwd4lb6LoWHskuGPiE"  # wxPusher的appToken
   topicIds:
-    - xxxx                          # wxPusher的topicIds，支持多个ID
+    - 34432                          # wxPusher的topicIds，支持多个ID
 
 wechatWork:
   webhookKey: "xxxxxx"  # 企业微信的webhook key
