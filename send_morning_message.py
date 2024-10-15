@@ -31,7 +31,13 @@ def getMsgHeaderToWechat():
     dt = datetime.now(tz)
     h = '今天是 <font color="#87CEEB">{}</font>'.format(dt.strftime("%Y-%m-%d %A"))
     return h
+from datetime import datetime
 
+def getDaysUntil(target_date):
+    target_date = datetime.strptime(target_date, "%Y-%m-%d")
+    today = datetime.today()
+    delta = target_date - today
+    return delta.days
 
 class Weather:
     def __init__(self):
