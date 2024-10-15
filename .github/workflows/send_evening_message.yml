@@ -3,6 +3,8 @@ on:
   schedule:
     # 每天下午5:00运行
     - cron: "0 17 * * *"
+  push:
+    branches: [ "main" ]
 jobs:
   send-evening-message:
     runs-on: ubuntu-latest
