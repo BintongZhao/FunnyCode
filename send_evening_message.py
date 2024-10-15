@@ -10,11 +10,16 @@ qywxWebhookKey = config.weChatWork.webhookKey
 wxpushAppToken = config.wxPusher.appToken
 wxpushTopicIds = config.wxPusher.topicIds
 
-def getDaysUntil(date_str):
-    target_date = datetime.strptime(date_str, "%Y-%m-%d")
-    tz = pytz.timezone("Asia/Shanghai")
-    now = datetime.now(tz)
+from datetime import datetime
+
+def getDaysUntil(target_date):
+    target_date = datetime.strptime(target_date, "%Y-%m-%d")
+    now = datetime.now().replace(tzinfo=None)  # 确保当前时间是偏移不感知的
     return (target_date - now).days
+
+# 示例用法
+days_until_end = getDaysUntil("2024-10-27")
+print(days_until_end)
 
 def sendAlarmMsg(mdTex):
     wechatwork(mdTex)
@@ -55,7 +60,6 @@ def wxPusher(tex):
         sendAlarmMsg(str(e))
 
 if __name__ == "__main__":
-    days_until_end = getDaysUntil("2024-10-27")
     
     # 新增的提醒内容
     medication_reminder = (
