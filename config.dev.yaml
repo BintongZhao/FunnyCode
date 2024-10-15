@@ -11,7 +11,7 @@ weather:
   city: 420100 # https://a.amap.com/lbs/static/code_resource/AMap_adcode_citycode.zip
 
 lover:
-  expressLoveTimestamp: 1136185445 
-  monthOfBirthday: 1
-  dayOfBirthday: 1
-  meetingTimestamp: 1136185445 
+  expressLoveTimestamp: 1594378800  
+  monthOfBirthday: 8
+  dayOfBirthday: 19
+  meetingTimestamp: 1504233600
