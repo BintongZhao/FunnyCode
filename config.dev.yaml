@@ -7,8 +7,8 @@ wechatWork:
   webhookKey: "xxxxxx"  # 企业微信的webhook key
 
 weather:
-  apiKey: "xxxxxxxxxxxxx"  # 高德天气接口的key
-  city: 420100 # https://a.amap.com/lbs/static/code_resource/AMap_adcode_citycode.zip
+  apiKey: "fd14b9ca913160e65eb47b1edba5d48c"  # 高德天气接口的key
+  city: 610118 # https://a.amap.com/lbs/static/code_resource/AMap_adcode_citycode.zip  
 
 lover:
   expressLoveTimestamp: 1594378800  
