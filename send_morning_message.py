@@ -312,8 +312,8 @@ if __name__ == "__main__":
     # 一行代码完成转换和格式化，并插入到原始字符串中
 
     tex1 = (
-        '{}\n> 今天是我们相爱的<font color="warning"> {} </font>天（{}）\n'
-        '我们已经相遇<font color="warning"> {} </font>天（{}）\n'
+        '{}\n> 今天是我们相爱的<font color="warning"> {} </font>天（{}）<br>'
+        '我们已经相遇<font color="warning"> {} </font>天（{}）<br>'
         '距离你的生日还有<font color="warning"> {} </font>天'
     ).format(
         h,
