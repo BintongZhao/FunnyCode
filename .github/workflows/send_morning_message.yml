@@ -1,0 +1,25 @@
+name: Send Morning Message
+on:
+  schedule:
+    # 每天早上7:40运行
+    - cron: "30 0 * * *"
+jobs:
+  send-morning-message:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+      
+      - name: Set up Python 3.9
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.9
+          
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+          
+      - name: Run morning message script
+        run: |
+          python send_morning_message.py
