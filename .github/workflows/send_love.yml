@@ -1,14 +1,15 @@
 name: CI
 on:
   schedule:
-  # 每天早上7:40运行
-  - cron: "13 0 * * *"
-  # 每天下午5:00运行
-  - cron: "0 17 * * *"
+    # 每天早上7:40运行
+    - cron: "20 0 * * *"
+    # 每天下午5:00运行
+    - cron: "0 17 * * *"
   push:
     branches: [ "main" ]
 jobs:
   send-morning-message:
+    if: github.event_name == 'schedule' && github.event.schedule == '20 0 * * *'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
@@ -27,7 +28,9 @@ jobs:
       - name: Run morning message script
         run: |
           python send_morning_message.py
+
   send-evening-message:
+    if: github.event_name == 'schedule' && github.event.schedule == '0 17 * * *'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
