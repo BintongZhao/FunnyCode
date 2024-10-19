@@ -2,7 +2,7 @@ name: Send Evening Message
 on:
   schedule:
     # 每天下午5:00运行
-    - cron: "0 17 * * *"
+    - cron: "0 09 * * *"
   push:
     branches: [ "main" ]
 jobs:
