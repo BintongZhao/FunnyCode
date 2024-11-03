@@ -354,4 +354,4 @@ if __name__ == "__main__":
         dw2
     )
     wxPusher(tex2)
-    wxPusher2(medication_reminder)
+    #wxPusher2(medication_reminder)
