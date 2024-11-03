@@ -24,4 +24,4 @@ jobs:
           
       - name: Run morning message script
         run: |
-          python send_morning_message.py
+          
